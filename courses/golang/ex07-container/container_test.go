@@ -11,7 +11,7 @@ import (
 //If the test doesn't compile on your machine try to run 'go get github.com/rendon/testcli' first
 
 func TestBuild(t *testing.T) {
-	c := testcli.Command("go", "build", "-o", "container")
+	c := testcli.Command("go", "build", "-o", "container", "./container.go")
 	c.Run()
 	if !c.Success() {
 		t.Fatalf("[ERROR]: The container was expected to build!")
